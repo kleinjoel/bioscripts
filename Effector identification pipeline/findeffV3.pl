@@ -7,13 +7,9 @@
  #!/usr/bin/perl
  #!/usr/local/bin/perl -w -I /Users/Joel/Perl5/
 
- #libraries on HPC
-use lib ("/hpc/local/CentOS7/uu_pmi/perl5");
-use lib ("/hpc/local/CentOS7/uu_pmi/perl5/lib/perl5/");
-#use lib ("/hpc/local/CentOS7/uu_pmi/perl5/lib/perl5/Bio/Tools/Run/");
-use lib ("/home/uu_pmi/jklein/perl5/lib/perl5/Bio/SeqIO");
-use lib ("/home/uu_pmi/jklein/perl5/lib/perl5");
-use lib ("/home/uu_pmi/jklein/perl5");
+ #Add location of BioPerl libraries 
+use lib ("/../locationofperllib");
+
 
 #updated version include tablemaking, annotation, and signalp annotation in table!
 
@@ -35,7 +31,7 @@ use Data::Dumper;
 #input
 #my $databaseold ="olddatabase"; #put here your sequences that you already identified
 #my $databasePHI ="PHI/PHI"; #put here your sequences that you already identified
-
+#make sure you added each and every file, or comment out all code related to a specific file
 my $gff= "signalp5.gff3" ; # gff file with signalp info
 my $wy= "pfs1_wy.tsv"; #table with WY sequences and locations
 my $lwy= "LWY_all_proteins_pfs1.tsv"; #table with LWY sequences and locations
